@@ -9,14 +9,23 @@ namespace MySQLDAL.repositories
 {
     public class ProfileRepository : IProfileRepository
     {
-        public Task<Profile> GetProfileByName(string name)
+        public async Task<Profile> GetLastProfileByMachineName(string machineName)
         {
             throw new NotImplementedException();
         }
 
-        public void SaveProfile(Profile profile)
+        public async Task<Profile> GetProfileByName(string name)
         {
             throw new NotImplementedException();
         }
+
+        
+
+        public async Task<bool> SaveProfile(Profile profile)
+        {
+            throw new NotImplementedException();
+        }
+
+        
     }
 }

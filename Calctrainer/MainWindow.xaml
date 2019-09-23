@@ -16,7 +16,8 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="{x:Static res:Resources.MenuItem_File}">
-                <MenuItem Header="{x:Static res:Resources.MenuItem_New}"></MenuItem>
+                <MenuItem Header="{x:Static res:Resources.MenuItem_NewProfile}"></MenuItem>
+                <MenuItem Header="{x:Static res:Resources.MenuItem_LoadProfile}"></MenuItem>
                 <MenuItem Header="{x:Static res:Resources.MenuItem_Exit}" Click="ExitClick"></MenuItem>
                 
             </MenuItem>

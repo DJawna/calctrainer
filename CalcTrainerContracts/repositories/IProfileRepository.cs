@@ -16,6 +16,8 @@ namespace CalctrainerContracts.repositories
         /// <returns></returns>
         Task<Profile> GetProfileByName(string name);
 
-        void SaveProfile(Profile profile);
+        Task<Profile> GetLastProfileByMachineName(string machineName);
+
+        Task<bool> SaveProfile(Profile profile);
     }
 }

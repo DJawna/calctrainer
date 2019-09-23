@@ -1,4 +1,5 @@
-﻿using CalctrainerContracts.repositories;
+﻿using CalctrainerContracts.models;
+using CalctrainerContracts.repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,10 +23,13 @@ namespace Calctrainer
         #endregion DependencyPropertyStaticBoylerplateCode
 
         private readonly IProfileRepository profileRepository;
+        private Profile currentProfile;
 
         public MainWindowViewModel(IProfileRepository profileRepository)
         {
-            this.profileRepository = profileRepository; 
+            this.profileRepository = profileRepository;
+            profileRepository.GetLastProfileByMachineName(Environment.MachineName)
+                .ContinueWith(i => )
         }
 
 

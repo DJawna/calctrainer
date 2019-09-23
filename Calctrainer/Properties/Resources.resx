@@ -123,7 +123,10 @@
   <data name="MenuItem_File" xml:space="preserve">
     <value>File</value>
   </data>
-  <data name="MenuItem_New" xml:space="preserve">
-    <value>New ...</value>
+  <data name="MenuItem_LoadProfile" xml:space="preserve">
+    <value>Load Existing Profile ...</value>
+  </data>
+  <data name="MenuItem_NewProfile" xml:space="preserve">
+    <value>New Profile ...</value>
   </data>
 </root>

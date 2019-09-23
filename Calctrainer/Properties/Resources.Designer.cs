@@ -79,11 +79,20 @@ namespace Calctrainer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New ....
+        ///   Looks up a localized string similar to Load Existing Profile ....
         /// </summary>
-        public static string MenuItem_New {
+        public static string MenuItem_LoadProfile {
             get {
-                return ResourceManager.GetString("MenuItem_New", resourceCulture);
+                return ResourceManager.GetString("MenuItem_LoadProfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Profile ....
+        /// </summary>
+        public static string MenuItem_NewProfile {
+            get {
+                return ResourceManager.GetString("MenuItem_NewProfile", resourceCulture);
             }
         }
     }

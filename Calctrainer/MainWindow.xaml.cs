@@ -29,5 +29,12 @@ namespace Calctrainer
 
             DataContext = new MainWindowViewModel(App.iocScope.Resolve<IProfileRepository>());
         }
+
+        private void ExitClick(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
+
+
     }
 }

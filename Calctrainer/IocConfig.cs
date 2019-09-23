@@ -33,7 +33,7 @@ namespace Calctrainer
                 {
                     var retval2 = contractInterfaces.Single(ci => ci.Name == ("I" + at.Name));
                     return retval2;
-                });
+                }).SingleInstance();
 
 
             return builder.Build();

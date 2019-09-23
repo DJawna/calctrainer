@@ -14,13 +14,24 @@ namespace Calctrainer
     /// </summary>
     public partial class App : Application
     {
-        public static IContainer IocContainer;
+        private IContainer IocContainer;
+        public static ILifetimeScope iocScope;
 
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
             IocContainer = IocConfig.Configure();
+
+            iocScope = IocContainer.BeginLifetimeScope();
+
+
             
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            base.OnExit(e);
+            iocScope.Dispose();
         }
     }
 }

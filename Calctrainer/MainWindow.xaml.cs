@@ -1,4 +1,6 @@
-﻿using MySQLDAL.repositories;
+﻿using Autofac;
+using CalctrainerContracts.repositories;
+using MySQLDAL.repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +27,7 @@ namespace Calctrainer
         {
             InitializeComponent();
 
-            DataContext = new MainWindowViewModel(new ProfileRepository());
+            DataContext = new MainWindowViewModel(App.iocScope.Resolve<IProfileRepository>());
         }
     }
 }

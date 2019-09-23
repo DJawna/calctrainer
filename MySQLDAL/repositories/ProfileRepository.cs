@@ -1,5 +1,5 @@
-﻿using Calctrainer.models;
-using Calctrainer.repositories;
+﻿using CalctrainerContracts.models;
+using CalctrainerContracts.repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;

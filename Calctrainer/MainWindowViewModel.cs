@@ -1,4 +1,4 @@
-﻿using Calctrainer.repositories;
+﻿using CalctrainerContracts.repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;

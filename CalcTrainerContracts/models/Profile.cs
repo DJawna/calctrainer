@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calctrainer.models
+namespace CalctrainerContracts.models
 {
     public class Profile
     {

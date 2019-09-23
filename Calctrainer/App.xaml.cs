@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autofac;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,13 @@ namespace Calctrainer
     /// </summary>
     public partial class App : Application
     {
+        public static IContainer IocContainer;
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            IocContainer = IocConfig.Configure();
+            
+        }
     }
 }

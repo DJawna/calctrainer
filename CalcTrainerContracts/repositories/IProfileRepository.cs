@@ -1,11 +1,11 @@
-﻿using Calctrainer.models;
+﻿using CalctrainerContracts.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calctrainer.repositories
+namespace CalctrainerContracts.repositories
 {
     public interface IProfileRepository
     {

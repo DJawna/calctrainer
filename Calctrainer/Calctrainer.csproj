@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="wpfConverters\DirtyColorConverter.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -94,6 +95,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CalcTrainerContracts\CalcTrainerContracts.csproj">
+      <Project>{c820ef8c-6b78-4ba2-a881-82ca0e7b2d72}</Project>
+      <Name>CalcTrainerContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MySQLDAL\MySQLDAL.csproj">
+      <Project>{1bb8600c-26f5-47af-85c8-ebf0b93dacd4}</Project>
+      <Name>MySQLDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

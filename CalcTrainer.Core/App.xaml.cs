@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autofac;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,24 @@ namespace CalcTrainer.Core
     /// </summary>
     public partial class App : Application
     {
+        private IContainer IocContainer;
+        public static ILifetimeScope iocScope;
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            IocContainer = IocConfig.Configure();
+
+            iocScope = IocContainer.BeginLifetimeScope();
+
+
+
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            base.OnExit(e);
+            iocScope.Dispose();
+        }
     }
 }

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Calctrainer.Core
+namespace CalcTrainer.Core
 {
     public class MainWindowViewModel : DependencyObject
     {

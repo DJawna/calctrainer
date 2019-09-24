@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace Calctrainer.Core.wpfConverters
+namespace CalcTrainer.Core.wpfConverters
 {
     public class DirtyColorConverter : IValueConverter
     {

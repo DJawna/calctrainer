@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calctrainer.Core.models
+namespace CalcTrainer.Core.models
 {
     public enum MessageType
     {

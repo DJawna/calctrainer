@@ -1,4 +1,4 @@
-﻿using Calctrainer.Core.models;
+﻿using CalcTrainer.Core.models;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calctrainer.Core.Services
+namespace CalcTrainer.Core.Services
 {
     public class MessageService: INotifyPropertyChanged
     {

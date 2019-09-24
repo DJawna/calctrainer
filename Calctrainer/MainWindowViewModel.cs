@@ -29,7 +29,13 @@ namespace Calctrainer
         {
             this.profileRepository = profileRepository;
             profileRepository.GetLastProfileByMachineName(Environment.MachineName)
-                .ContinueWith(i => )
+                .ContinueWith(i => 
+                {
+                    if (!i.IsFaulted)
+                    {
+                        currentProfile = i.Result;
+                    }
+                });
         }
 
 

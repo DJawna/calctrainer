@@ -1,12 +1,36 @@
-﻿<Window x:Class="CalcTrainer.Core.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CalcTrainer.Core"
+        xmlns:local="clr-namespace:Calctrainer.Core"
+        xmlns:conv="clr-namespace:Calctrainer.Core.wpfConverters"
+        xmlns:res="clr-namespace:Calctrainer.Core.Properties"    
+    x:Class="Calctrainer.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Window.Resources>
+        <conv:DirtyColorConverter x:Key="DirtyColorConverter"></conv:DirtyColorConverter>
 
-    </Grid>
+    </Window.Resources>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="{x:Static res:Resources.MenuItem_File}">
+                <MenuItem Header="{x:Static res:Resources.MenuItem_NewProfile}"></MenuItem>
+                <MenuItem Header="{x:Static res:Resources.MenuItem_LoadProfile}"></MenuItem>
+                <MenuItem Header="{x:Static res:Resources.MenuItem_Exit}" Click="ExitClick"></MenuItem>
+
+            </MenuItem>
+
+
+        </Menu>
+        <Grid DockPanel.Dock="Top">
+
+
+            <TextBox x:Name="ProfileName" HorizontalAlignment="Left" Height="23" Margin="164,232,0,164" TextWrapping="Wrap" BorderBrush="{Binding ProfileDirty, Mode=OneWay, Converter={StaticResource DirtyColorConverter}}" Text="{Binding ProfileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Width="120"/>
+
+
+        </Grid>
+    </DockPanel>
+
 </Window>

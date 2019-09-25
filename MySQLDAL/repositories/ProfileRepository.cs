@@ -11,7 +11,9 @@ namespace MySQLDAL.repositories
     {
         public async Task<Profile> GetLastProfileByMachineName(string machineName)
         {
-            throw new NotImplementedException();
+            await Task.Delay(10000);
+
+            return new Profile { Name = "undefined" };
         }
 
         public async Task<Profile> GetProfileByName(string name)

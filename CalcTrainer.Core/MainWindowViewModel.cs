@@ -10,7 +10,7 @@ using System.Windows;
 
 namespace CalcTrainer.Core
 {
-    public class MainWindowViewModel : INotifyPropertyChanged
+    internal class MainWindowViewModel : BaseViewModel
     {
 
         
@@ -45,6 +45,5 @@ namespace CalcTrainer.Core
             get;set;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged = (sender,e) => { };
     }
 }

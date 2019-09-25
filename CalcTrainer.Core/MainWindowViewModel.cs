@@ -2,6 +2,7 @@
 using CalctrainerContracts.repositories;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,18 +10,10 @@ using System.Windows;
 
 namespace CalcTrainer.Core
 {
-    public class MainWindowViewModel : DependencyObject
+    public class MainWindowViewModel : INotifyPropertyChanged
     {
-        #region DependencyPropertyStaticBoylerplateCode
 
-        public static readonly DependencyProperty ProfileNameProperty =
-            DependencyProperty.Register("ProfileNameProperty", typeof(string), typeof(MainWindowViewModel), new PropertyMetadata(""));
-
-        public static readonly DependencyProperty ProfileDirtyProperty =
-            DependencyProperty.Register("ProfileDirty", typeof(bool), typeof(MainWindowViewModel), new PropertyMetadata(false));
-
-
-        #endregion DependencyPropertyStaticBoylerplateCode
+        
 
         private readonly IProfileRepository profileRepository;
         private Profile currentProfile;
@@ -34,6 +27,7 @@ namespace CalcTrainer.Core
                     if (!i.IsFaulted)
                     {
                         currentProfile = i.Result;
+                        ProfileName = currentProfile.Name;
                     }
                 });
         }
@@ -41,18 +35,16 @@ namespace CalcTrainer.Core
 
         public string ProfileName
         {
-            get { return (string)GetValue(ProfileNameProperty); }
-            set { SetValue(ProfileNameProperty, value); }
+            get;set;
         }
 
 
 
         public bool ProfileDirty
         {
-            get { return (bool)GetValue(ProfileDirtyProperty); }
-            set { SetValue(ProfileDirtyProperty, value); }
+            get;set;
         }
 
-
+        public event PropertyChangedEventHandler PropertyChanged = (sender,e) => { };
     }
 }

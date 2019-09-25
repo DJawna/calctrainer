@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using CalcTrainer.Core.ViewModels;
 using CalctrainerContracts.repositories;
 using System;
 using System.Collections.Generic;

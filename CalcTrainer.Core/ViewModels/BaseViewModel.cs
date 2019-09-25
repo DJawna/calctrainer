@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace CalcTrainer.Core
+namespace CalcTrainer.Core.ViewModels
 {
     internal class BaseViewModel : INotifyPropertyChanged
     {

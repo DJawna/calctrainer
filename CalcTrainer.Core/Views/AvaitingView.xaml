@@ -19,8 +19,8 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="10" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="Waiting for ..." TextAlignment="Center" />
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding AvaitMessage}" TextAlignment="Center" />
 
-        <ProgressBar Grid.Row="3" Grid.Column="1" Height="20" IsIndeterminate="True" ></ProgressBar>
+        <ProgressBar Grid.Row="3" Grid.Column="1" Height="20" IsIndeterminate="{Binding IsIndeterministic}" Value="{Binding Progress}" ></ProgressBar>
     </Grid>
 </UserControl>

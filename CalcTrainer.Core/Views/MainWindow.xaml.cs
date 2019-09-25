@@ -27,7 +27,7 @@ namespace CalcTrainer.Core.Views
         {
             InitializeComponent();
 
-            DataContext = new MainWindowViewModel<UserControl>(App.iocScope.Resolve<IProfileRepository>(), new AvaitingView());
+            DataContext = new MainWindowViewModel<UserControl>(App.iocScope.Resolve<IProfileRepository>(), new AvaitingView(new AvaitingViewModel()));
         }
 
         private void ExitClick(object sender, RoutedEventArgs e)

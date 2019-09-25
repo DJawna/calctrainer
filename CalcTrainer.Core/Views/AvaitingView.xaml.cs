@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalcTrainer.Core.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +19,13 @@ namespace CalcTrainer.Core.Views
     /// </summary>
     public partial class AvaitingView : UserControl
     {
-        public AvaitingView()
+
+
+
+        public AvaitingView(AvaitingViewModel avaitingViewModel)
         {
             InitializeComponent();
+            this.DataContext = avaitingViewModel;
         }
     }
 }

@@ -24,40 +24,7 @@
 
 
         </Menu>
-        <Grid DockPanel.Dock="Top">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="20" />
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="20" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="20" />
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="20" />
-
-            </Grid.RowDefinitions>
-            
-
-
-            <TextBox x:Name="ProfileName" 
-                     Grid.Row="1"
-                     Grid.Column="1"
-                     Width="70"
-                     
-                     TextWrapping="Wrap" 
-                     BorderBrush="{Binding ProfileDirty, Mode=OneWay, Converter={StaticResource DirtyColorConverter}}" 
-                     Text="{Binding ProfileName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-
-
-        </Grid>
+        <ContentControl x:Name="SubControls" DockPanel.Dock="Top" Content="{Binding Subcontrol}" />
     </DockPanel>
 
 </Window>

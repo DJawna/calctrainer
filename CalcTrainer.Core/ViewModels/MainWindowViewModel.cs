@@ -4,27 +4,22 @@ using System;
 
 namespace CalcTrainer.Core.ViewModels
 {
-    internal class MainWindowViewModel : BaseViewModel
+    internal class MainWindowViewModel<T> : BaseViewModel
     {
-
+        private readonly T avaitingControl;
         
 
         private readonly IProfileRepository profileRepository;
         private Profile currentProfile;
 
-        public MainWindowViewModel(IProfileRepository profileRepository)
+        public MainWindowViewModel(IProfileRepository profileRepository, T avaitingControl)
         {
             this.profileRepository = profileRepository;
-            profileRepository.GetLastProfileByMachineName(Environment.MachineName)
-                .ContinueWith(i => 
-                {
-                    if (!i.IsFaulted)
-                    {
-                        currentProfile = i.Result;
-                        ProfileName = currentProfile.Name;
-                    }
-                });
+            this.avaitingControl = avaitingControl;
+            Subcontrol = this.avaitingControl;
         }
+
+        public T Subcontrol { get; set; }
 
 
         public string ProfileName

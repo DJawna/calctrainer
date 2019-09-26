@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CalcTrainer.Core.ViewModels
+﻿namespace CalcTrainer.Core.ViewModels
 {
     class ProfileCrudViewModel : BaseViewModel
     {

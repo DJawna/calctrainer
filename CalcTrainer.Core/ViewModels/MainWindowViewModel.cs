@@ -1,6 +1,5 @@
 ﻿using CalctrainerContracts.models;
 using CalctrainerContracts.repositories;
-using System;
 
 namespace CalcTrainer.Core.ViewModels
 {

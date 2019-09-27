@@ -22,7 +22,7 @@ namespace CalcTrainer.Core.Views
 
 
 
-        public AvaitingView(AvaitingViewModel avaitingViewModel)
+        public AvaitingView(BaseViewModel avaitingViewModel)
         {
             InitializeComponent();
             this.DataContext = avaitingViewModel;

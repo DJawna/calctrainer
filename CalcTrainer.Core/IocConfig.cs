@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Text;
 using System.Linq;
+using CalcTrainer.Core.ViewModels;
 
 namespace CalcTrainer.Core
 {
@@ -31,6 +32,8 @@ namespace CalcTrainer.Core
                     var retval2 = contractInterfaces.Single(ci => ci.Name == ("I" + at.Name));
                     return retval2;
                 }).SingleInstance();
+
+
 
 
             return builder.Build();

@@ -1,15 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+﻿using CalcTrainer.Core.ViewModels;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CalcTrainer.Core.Views
 {
@@ -18,9 +8,11 @@ namespace CalcTrainer.Core.Views
     /// </summary>
     public partial class ProfileStatsView : UserControl
     {
-        public ProfileStatsView()
+
+        public ProfileStatsView(BaseViewModel baseViewModel)
         {
             InitializeComponent();
+            this.DataContext = baseViewModel;
         }
     }
 }

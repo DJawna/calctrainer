@@ -15,7 +15,7 @@ namespace CalcTrainer.Core.wpfConverters
         {
             { typeof(AvaitingViewModel), (val) => new AvaitingView(val)},
             { typeof(ProfileCrudViewModel), (val) => new ProfileCrudView()},
-            { typeof(ProfileStatsViewModel), (val) => new ProfileStatsView()},
+            { typeof(ProfileStatsViewModel), (val) => new ProfileStatsView(val)},
             { typeof(TrainingViewModel), (val) => new TrainingView()}
         };
 

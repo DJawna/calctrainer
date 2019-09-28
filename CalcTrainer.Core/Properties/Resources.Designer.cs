@@ -95,5 +95,14 @@ namespace CalcTrainer.Core.Properties {
                 return ResourceManager.GetString("MenuItem_NewProfile", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to profilename.
+        /// </summary>
+        public static string ProfileName {
+            get {
+                return ResourceManager.GetString("ProfileName", resourceCulture);
+            }
+        }
     }
 }

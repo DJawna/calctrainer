@@ -3,22 +3,22 @@ using CalctrainerContracts.repositories;
 
 namespace CalcTrainer.Core.ViewModels
 {
-    internal class MainWindowViewModel<T> : BaseViewModel
+    internal class MainWindowViewModel : BaseViewModel
     {
-        private readonly T avaitingControl;
+        private readonly AvaitingViewModel avaitingControl;
         
 
         private readonly IProfileRepository profileRepository;
         private Profile currentProfile;
 
-        public MainWindowViewModel(IProfileRepository profileRepository, T avaitingControl)
+        public MainWindowViewModel(IProfileRepository profileRepository, AvaitingViewModel avaitingControl)
         {
             this.profileRepository = profileRepository;
             this.avaitingControl = avaitingControl;
             Subcontrol = this.avaitingControl;
         }
 
-        public T Subcontrol { get; set; }
+        public BaseViewModel Subcontrol { get; set; }
 
 
         public string ProfileName

@@ -11,6 +11,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
         <conv:DirtyColorConverter x:Key="DirtyColorConverter"></conv:DirtyColorConverter>
+        <conv:ViewModelToViewConverter x:Key="ViewModelToViewConverter"></conv:ViewModelToViewConverter>
 
     </Window.Resources>
     <DockPanel>
@@ -24,7 +25,7 @@
 
 
         </Menu>
-        <ContentControl x:Name="SubControls" DockPanel.Dock="Top" Content="{Binding Subcontrol}" />
+        <ContentControl x:Name="SubControls" DockPanel.Dock="Top" Content="{Binding Subcontrol,Converter={StaticResource ViewModelToViewConverter}}" />
     </DockPanel>
 
 </Window>

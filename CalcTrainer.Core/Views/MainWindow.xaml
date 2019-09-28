@@ -17,13 +17,10 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="{x:Static res:Resources.MenuItem_File}">
-                <MenuItem Header="{x:Static res:Resources.MenuItem_NewProfile}"></MenuItem>
-                <MenuItem Header="{x:Static res:Resources.MenuItem_LoadProfile}"></MenuItem>
-                <MenuItem Header="{x:Static res:Resources.MenuItem_Exit}" Click="ExitClick"></MenuItem>
-
+                <MenuItem Header="{x:Static res:Resources.MenuItem_NewProfile}" />
+                <MenuItem Header="{x:Static res:Resources.MenuItem_LoadProfile}" />
+                <MenuItem Header="{x:Static res:Resources.MenuItem_Exit}" Click="ExitClick" />
             </MenuItem>
-
-
         </Menu>
         <ContentControl x:Name="SubControls" DockPanel.Dock="Top" Content="{Binding Subcontrol,Converter={StaticResource ViewModelToViewConverter}}" />
     </DockPanel>

@@ -15,7 +15,7 @@ namespace CalcTrainer.Core.Views
         {
             InitializeComponent();
 
-            DataContext = new MainWindowViewModel(App.iocScope.Resolve<IProfileRepository>(),new AvaitingViewModel());
+            DataContext = new MainWindowViewModel(App.iocScope.Resolve<IProfileRepository>());
         }
 
         private void ExitClick(object sender, RoutedEventArgs e)

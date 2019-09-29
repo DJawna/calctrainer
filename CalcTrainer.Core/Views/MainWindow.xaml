@@ -19,6 +19,7 @@
             <MenuItem Header="{x:Static res:Resources.MenuItem_File}">
                 <MenuItem Header="{x:Static res:Resources.MenuItem_NewProfile}" />
                 <MenuItem Header="{x:Static res:Resources.MenuItem_LoadProfile}" />
+                <MenuItem Header="{x:Static res:Resources.ShowTrainingView}" Command="{Binding ShowTrainingViewModel}" />
                 <MenuItem Header="{x:Static res:Resources.MenuItem_Exit}" Click="ExitClick" />
             </MenuItem>
         </Menu>

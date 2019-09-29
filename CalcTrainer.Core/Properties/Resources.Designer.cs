@@ -104,5 +104,14 @@ namespace CalcTrainer.Core.Properties {
                 return ResourceManager.GetString("ProfileName", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start Training ....
+        /// </summary>
+        public static string ShowTrainingView {
+            get {
+                return ResourceManager.GetString("ShowTrainingView", resourceCulture);
+            }
+        }
     }
 }

@@ -132,4 +132,7 @@
   <data name="ProfileName" xml:space="preserve">
     <value>profilename</value>
   </data>
+  <data name="ShowTrainingView" xml:space="preserve">
+    <value>Start Training ...</value>
+  </data>
 </root>

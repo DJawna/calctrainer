@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace CalctrainerContracts.models
 {
-    public class Profile
+    public struct Profile
     {
-        public string Name { get; set; }
+        public Profile(string name)
+        {
+            Name = name;
+        }
+        public string Name { get; private set; }
     }
 }

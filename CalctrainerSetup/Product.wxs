@@ -11,6 +11,7 @@
 
 		<MajorUpgrade DowngradeErrorMessage="A newer version of Calctrainer is already installed." />
 		<MediaTemplate EmbedCab="yes" />
+    <UIRef Id="WixUI_InstallDir" />
 
 		<Feature Id="ProductFeature" Title="Calctrainer" Level="1">
 			<ComponentGroupRef Id="CalcTrainer_Core_Group" />
@@ -23,7 +24,10 @@
 				<Directory Id="INSTALLFOLDER" Name="Calctrainer" />
 			</Directory>
 		</Directory>
+    <Property Id="WIXUI_INSTALLDIR"
+          Value="INSTALLFOLDER" />
 	</Fragment>
+
 
 	<Fragment>
 		<ComponentGroup Id="CalcTrainer_Core_Group" Directory="INSTALLFOLDER">

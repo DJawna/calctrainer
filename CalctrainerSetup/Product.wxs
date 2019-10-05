@@ -1,30 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="CalctrainerSetup" Language="1033" Version="1.0.0.0" Manufacturer="" UpgradeCode="5d6fd001-0bd9-478d-86b0-f1f7f7dd77e6">
+	<Product 
+    Id="*" 
+    Name="Calctrainer" 
+    Language="1033" 
+    Version="1.0.0.0" 
+    Manufacturer="djawna" 
+    UpgradeCode="5d6fd001-0bd9-478d-86b0-f1f7f7dd77e6">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
-		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-		<MediaTemplate />
+		<MajorUpgrade DowngradeErrorMessage="A newer version of Calctrainer is already installed." />
+		<MediaTemplate EmbedCab="yes" />
 
-		<Feature Id="ProductFeature" Title="CalctrainerSetup" Level="1">
-			<ComponentGroupRef Id="ProductComponents" />
+		<Feature Id="ProductFeature" Title="Calctrainer" Level="1">
+			<ComponentGroupRef Id="CalcTrainer_Core_Group" />
 		</Feature>
 	</Product>
 
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLFOLDER" Name="CalctrainerSetup" />
+				<Directory Id="INSTALLFOLDER" Name="Calctrainer" />
 			</Directory>
 		</Directory>
 	</Fragment>
 
 	<Fragment>
-		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+		<ComponentGroup Id="CalcTrainer_Core_Group" Directory="INSTALLFOLDER">
 			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
-			<!-- <Component Id="ProductComponent"> -->
-				<!-- TODO: Insert files, registry keys, and other resources here. -->
-			<!-- </Component> -->
+			<Component Id="CalcTrainer_Core_Files" Guid="278CA122-2DD6-45FE-8BA4-44B1E0E10AB1">
+        <File Source="$(var.CalcTrainer.Core.TargetDir)Autofac.dll" />
+        <File Source="$(var.CalcTrainer.Core.TargetDir)CalcTrainer.Core.deps.json" />
+        <File Source="$(var.CalcTrainer.Core.TargetDir)CalcTrainer.Core.dll" />
+        <File Source="$(var.CalcTrainer.Core.TargetDir)CalcTrainer.Core.exe" />
+        <File Source="$(var.CalcTrainer.Core.TargetDir)CalcTrainer.Core.runtimeconfig.dev.json" />
+        <File Source="$(var.CalcTrainer.Core.TargetDir)CalcTrainer.Core.runtimeconfig.json" />
+        <File Source="$(var.CalcTrainer.Core.TargetDir)CalcTrainerContracts.dll" />
+        <File Source="$(var.CalcTrainer.Core.TargetDir)MySQLDAL.dll" />
+			</Component>
 		</ComponentGroup>
 	</Fragment>
 </Wix>

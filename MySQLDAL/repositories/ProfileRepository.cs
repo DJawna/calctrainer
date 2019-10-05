@@ -13,7 +13,7 @@ namespace MySQLDAL.repositories
         {
             await Task.Delay(10000);
 
-            return new Profile { Name = "undefined" };
+            return new Profile("undefined");
         }
 
         public async Task<Profile> GetProfileByName(string name)

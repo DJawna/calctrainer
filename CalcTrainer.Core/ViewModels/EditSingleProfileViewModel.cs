@@ -48,6 +48,7 @@ namespace CalcTrainer.Core.ViewModels
                 });
 
             });
+            _saveModified.CommandIsEnabled = false;
         }
 
         /// <summary>
@@ -66,7 +67,10 @@ namespace CalcTrainer.Core.ViewModels
         /// <summary>
         /// save the <see cref="Profile"/>
         /// </summary>
-        public ICommand SaveModified { get; private set; }
+        public ICommand SaveModified 
+        { 
+            get => _saveModified;
+        }
 
         
         public string ProfileName 

@@ -3,18 +3,23 @@ using CalctrainerContracts.models;
 using CalctrainerContracts.repositories;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Input;
 
+[assembly: InternalsVisibleToAttribute("CalcTrainer.Core.Tests")]
 namespace CalcTrainer.Core.ViewModels
 {
     /// <summary>
     /// Viewmodel to edit a single <see cref="Profile"/> record
     /// </summary>
+ 
     class EditSingleProfileViewModel : BaseViewModel
     {
         private readonly IProfileRepository profileRepository;
         private string profileName;
+        private ActionCommand _saveModified;
+        private bool _modified;
 
         /// <summary>
         /// </summary>
@@ -24,8 +29,9 @@ namespace CalcTrainer.Core.ViewModels
         {
             
             this.profileRepository = profileRepository;
-            SaveModified = new ActionCommand(() =>
+            _saveModified = new ActionCommand((self) =>
             {
+                self.CommandIsEnabled = false;
                 this.profileRepository
                 .SaveProfile(new Profile(ProfileName))
                 .ContinueWith(i =>
@@ -34,15 +40,28 @@ namespace CalcTrainer.Core.ViewModels
                     {
                         Modified = false;
                     }
+                    else 
+                    {
+                        Modified = true;
+                    }
+
                 });
 
-            },() => Modified);
+            });
         }
 
         /// <summary>
         /// true if <see cref="Profile"/> has been changed
         /// </summary>
-        public bool Modified { get; set; }
+        public bool Modified 
+        { 
+            get => _modified;
+            set 
+            {
+                _modified = value;
+                _saveModified.CommandIsEnabled = Modified;
+            } 
+        }
 
         /// <summary>
         /// save the <see cref="Profile"/>

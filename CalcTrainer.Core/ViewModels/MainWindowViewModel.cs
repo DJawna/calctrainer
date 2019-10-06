@@ -34,11 +34,11 @@ namespace CalcTrainer.Core.ViewModels
 
         public BaseViewModel Subcontrol { get; set; }
 
-        public ICommand ShowProfileStatsView => new ActionCommand(() => Subcontrol = profileStatsViewModel);
+        public ICommand ShowProfileStatsView => new ActionCommand((self) => Subcontrol = profileStatsViewModel);
 
    
 
-        public ICommand ShowTrainingViewModel => new ActionCommand(() => Subcontrol = trainingViewModel);
+        public ICommand ShowTrainingViewModel => new ActionCommand((self) => Subcontrol = trainingViewModel);
 
         public bool ProfileDirty
         {

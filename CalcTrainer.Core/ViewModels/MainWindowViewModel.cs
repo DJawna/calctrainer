@@ -9,7 +9,6 @@ namespace CalcTrainer.Core.ViewModels
     internal class MainWindowViewModel : BaseViewModel
     {
         private readonly AvaitingViewModel avaitingControl;
-        private readonly ProfileStatsViewModel profileStatsViewModel;
         private readonly TrainingViewModel trainingViewModel;
 
         private readonly IProfileRepository profileRepository;
@@ -18,6 +17,7 @@ namespace CalcTrainer.Core.ViewModels
         public MainWindowViewModel(IProfileRepository profileRepository)
         {
             this.profileRepository = profileRepository;
+           
             this.avaitingControl = new AvaitingViewModel();
             this.trainingViewModel = new TrainingViewModel();
             
@@ -34,7 +34,7 @@ namespace CalcTrainer.Core.ViewModels
 
         public BaseViewModel Subcontrol { get; set; }
 
-        public ICommand ShowProfileStatsView => new ActionCommand((self) => Subcontrol = profileStatsViewModel);
+        public ICommand ShowProfileStatsView => new ActionCommand((self) => Subcontrol = new ProfileStatsViewModel(currentProfile));
 
    
 

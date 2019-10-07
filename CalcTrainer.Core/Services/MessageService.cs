@@ -1,4 +1,5 @@
 ﻿using CalcTrainer.Core.models;
+using CalcTrainer.Core.ViewModels;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CalcTrainer.Core.Services
 {
-    public class MessageService: INotifyPropertyChanged
+    public class MessageService: BaseViewModel
     {
 
         private readonly ConcurrentQueue<Message> messageQueue;
@@ -19,11 +20,5 @@ namespace CalcTrainer.Core.Services
             messageQueue = new ConcurrentQueue<Message>();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void PushMessage(Message message)
-        {
-            messageQueue.Enqueue(message);
-        }
     }
 }

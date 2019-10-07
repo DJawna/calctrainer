@@ -14,8 +14,8 @@ namespace CalcTrainer.Core
     /// </summary>
     public partial class App : Application
     {
-        private IContainer IocContainer;
-        public static ILifetimeScope iocScope;
+        private IContainer? IocContainer;
+        public static ILifetimeScope? iocScope;
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -31,7 +31,7 @@ namespace CalcTrainer.Core
         protected override void OnExit(ExitEventArgs e)
         {
             base.OnExit(e);
-            iocScope.Dispose();
+            iocScope?.Dispose();
         }
     }
 }
